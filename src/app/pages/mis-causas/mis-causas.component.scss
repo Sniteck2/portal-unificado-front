@@ -1,0 +1,93 @@
+@import "./src/assets/sass/scss/funciones";
+@import "./src/assets/sass/scss/core/app-colors";
+
+.btn-competencia{
+  color: #000000 !important;
+  //background-color: #c3eaff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  height: 36px;
+}
+
+.div-padre{
+  margin: 10px;
+  margin-left: 149px;
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.div-padres{
+  margin: 10px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.div-hijo{
+  margin-top: 10px;
+  //margin-right: 30px;
+}
+
+.cambio-letra{
+  color: white;
+}
+
+.btn--red {
+  background: #65BB69;
+}
+
+.btn--radius {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.rol-causa{
+  border: 1px solid #ccc;
+  height: 37px;
+  border-radius: 4px;
+}
+
+//----------------------------------------------///
+.card {
+  border: 1px solid color-function("morado-2", "base");
+  color: color-function("gris", "base");
+}
+
+.card-bar {
+  background-color: #5360a9;
+  color: white;
+  border-bottom: rgba(0, 0, 0, 0.13) 1px solid;
+  display: flex;
+  height: 30px;
+  padding-top: 2px;
+}
+
+.card-header {
+  color: color-function("gris", "base");
+  background-color: rgba(color-function("morado-4", "base"), 0.1);
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.card-content {
+  color: color-function("gris", "base");
+  padding-top: 10px;
+}
+
+.card-title {
+  text-align: center;
+  flex: 1 0 auto;
+  color: white;
+  font-size: 16px;
+  text-transform: none !important;
+}

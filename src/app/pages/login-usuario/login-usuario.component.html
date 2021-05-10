@@ -1,0 +1,57 @@
+<!--Login Page Starts-->
+<section (keyup.enter)="usuarioBloqueado()" id="login">
+
+  <div class="row full-height-vh m-0">
+    <div class="col-12 col-md-5 offset-md-5 col-lg-3 py-lg-5">
+      <div class="login-container px-3 py-5">
+        <h2 class="text-uppercase text-white font-weight-bold mb-5 text-center login-tittle">
+          Sistema seguimiento de causas ingreso usuario
+        </h2>
+        <p class="card-text mb-4 text-white text-center">Ingresa tus credenciales para iniciar
+          sesión</p>
+        <form [formGroup]="loginForm">
+          <div class="form-group mb-1">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-user fa-fw"></i>
+              </span>
+              </div>
+              <input class="form-control input-lg" formControlName="codUsuario"
+                     placeholder="Rut sin dígito verificador" type="text"/>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <div class="input-group input-group-lg">
+              <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fa fa-lock fa-fw"></i>
+              </span>
+              </div>
+              <input class="form-control input-lg" formControlName="password" placeholder="Contraseña"
+                     type="password"/>
+            </div>
+          </div>
+        </form>
+        <div class="d-flex flex-column flex-lg-row justify-content-lg-between mb-4">
+          <button
+            (click)="usuarioBloqueado()"
+            class="btn btn-block btn-purpura font-weight-bold btn-lg text-white text-uppercase">
+            <span>Iniciar sesión</span>
+          </button>
+        </div>
+        <div class="forgot-password-option padre">
+          <a routerLink="/crear-usuario" class="text-white"
+             style="text-decoration: underline; cursor: pointer">
+            Registrarte como usuario
+          </a>
+          <br>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Login Page Ends-->
+

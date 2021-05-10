@@ -1,0 +1,24 @@
+<table class="table table-bordered table-hover table-sm" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+  <thead class="fondo-grilla">
+    <tr>
+      <th>Competencia</th>
+      <th>Rit</th>
+      <th>Tribunal</th>
+      <th>Caratulado</th>
+      <th>Fecha de Ingreso</th>
+      <th>Institución</th>
+    </tr>
+  </thead>
+  <tbody>
+  <ng-container>
+    <tr *ngFor="let item of causas">
+      <td>{{item.competenciaVO.glosa}}</td>
+      <td>{{item.tipoCausa}}-{{item.rolCausa}}-{{item.eraCausa}}</td>
+      <td>{{item.tribunalVO.glosa}}</td>
+      <td>{{item.glosaParte}}</td>
+      <td>{{item.fechaIngresoCausa | date: 'dd/MM/yyyy'}}</td>
+      <td>Institución</td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>

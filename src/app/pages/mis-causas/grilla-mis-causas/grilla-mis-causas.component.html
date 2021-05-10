@@ -1,0 +1,41 @@
+<table class="table table-bordered table-hover table-sm" id="grilla-mis-causas" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+  <thead class="fondo-grilla">
+  <tr>
+    <th>Competencia</th>
+    <th>Rit</th>
+    <th>Tribunal</th>
+    <th>Caratulado</th>
+    <th>Fecha de Ingreso</th>
+    <th>Institución</th>
+    <th>Trámites</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container>
+    <tr *ngFor="let item of causas">
+      <td>{{item.competenciaVO.glosa}}</td>
+      <td>{{item.tipoCausa}}-{{item.rolCausa}}-{{item.eraCausa}}</td>
+      <td>{{item.tribunalVO.glosa}}</td>
+      <td>{{item.glosaParte}}</td>
+      <td>{{item.fechaIngresoCausa | date: 'dd/MM/yyyy'}}</td>
+      <td>--</td>
+      <td class="centrado"><input type="image" class="imagen" src="assets/img/gallery/lupa.png" (click)="open(tramite, item.id)"/></td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+
+<ng-template let-modal #tramite>
+  <div class="modal-header">
+    <h4 class="modal-title">Detalle Trámite</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-modal-resumen-tramite [causa]="causa">
+
+    </app-modal-resumen-tramite>
+  </div>
+</ng-template>
+

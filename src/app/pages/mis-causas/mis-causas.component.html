@@ -1,0 +1,51 @@
+<div class="col-md-12">
+  <div class="row justify-content-center">
+    <div class="div-padre">
+      <div class="div-hijo">
+        <label><b>Seleccione Competencia:</b></label>
+      </div>
+      <div class="col-md-3">
+        <ng-select [(ngModel)]="competencia" [multiple]="true"
+                   placeholder="Competencia">
+          <ng-option *ngFor="let item of competencias" [value]="item.id">{{item.glosa}}</ng-option>
+        </ng-select>
+      </div>
+      <div class="div-hijo">
+        <label><b>Fecha modificación causa</b></label>&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="div-hijo">
+        <label><b>Desde: </b>&nbsp;</label><input type="date" [(ngModel)]="fechaInicio">&nbsp;
+      </div>
+      <div class="div-hijo">
+        <label><b>Hasta: </b>&nbsp;</label><input type="date" [(ngModel)]="fechaFinal">
+      </div>
+    </div>
+    <div class="div-padres">
+      <button class="btn btn--radius btn--red" type="button" (click)="validarFechas()"><b>Consultar causas</b></button>
+    </div>
+    <br><br>
+    <div class="col-md-12" style="margin-top: 50px">
+      <div class="card">
+        <div class="card-bar">
+          <div class="card-title">
+            <b>Detalle causas [Total: {{cantidades}}]</b>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="">
+            <div class="justify-content-center">
+              <app-tarjetas-causas-competencia [competencias]="competencias">
+
+              </app-tarjetas-causas-competencia>
+            </div>
+          </div>
+          <br>
+          <app-grilla-mis-causas (cantidad)="recibirCantidad($event)"
+                                 (enviarCausas)="recibeCausas($event)">
+          </app-grilla-mis-causas>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

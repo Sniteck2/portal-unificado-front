@@ -1,0 +1,15 @@
+  <div class="div-padre">
+    <div *ngFor="let item of competencias">
+        <div class="card color-todos" *ngIf="item.nuevaGlosa != 'Todos'">
+          <div class="card-body text-center">
+            <label class="card-title texto"><b>{{item.nuevaGlosa }} : {{item.cantidadComp != null ? item.cantidadComp : 0}}</b></label>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+

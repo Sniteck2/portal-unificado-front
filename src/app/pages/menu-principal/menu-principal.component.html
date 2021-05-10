@@ -1,0 +1,108 @@
+<div class="d-flex" id="menu">
+
+  <div id="sidebar-wrapper" class="fondo-menu">
+    <div>
+      <nav class="nav">
+        <ul style="margin-top: 438px">
+          <li>
+            <a>Bienvenido</a>
+          </li>
+          <li>
+            <a (click)="cambio(1)">Mis causas</a>
+          </li>
+          <li>
+            <a (click)="cambio(2)">Consultar causas</a>
+          </li>
+          <li *ngIf="codTipoPerfil == 1">
+            <a (click)="cambio(3)">Migración de datos</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg fondo-nav">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn--radius btn--red dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+                {{nombreUsuario}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)="open(modificar)" style="cursor: pointer">Modificar</a>
+                <a class="dropdown-item" routerLink="/login-usuario">Cerrar sesión</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <br><br>
+      <div class="card" *ngIf="ventana == 1">
+        <div class="card-bar">
+          <div class="card-title">
+            <b>Mis causas</b>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="col-md-12">
+            <app-mis-causas></app-mis-causas>
+          </div>
+        </div>
+        <br><br>
+      </div>
+      <div class="card" *ngIf="ventana == 2">
+        <div class="card-bar">
+          <div class="card-title">
+            <b>Consultar Causas</b>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="col-md-12">
+              <app-tarjeta-competencia></app-tarjeta-competencia>
+          </div>
+        </div>
+        <br><br>
+      </div>
+      <div class="card" *ngIf="ventana == 3">
+        <div class="card-bar">
+          <div class="card-title">
+            <b>Resumen Migración</b>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="col-md-12">
+            <app-grilla-resumen></app-grilla-resumen>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<ng-template let-modal #modificar>
+  <div class="modal-header">
+    <h4 class="modal-title">Modificar datos</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-modificar-usuario>
+
+    </app-modificar-usuario>
+  </div>
+</ng-template>
+
+
+
+
+

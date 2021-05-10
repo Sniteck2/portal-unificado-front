@@ -1,0 +1,23 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="tramite-tab" data-toggle="tab" href="#tramite" role="tab" aria-controls="home" aria-selected="true">Trámites</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="escrito-tab" data-toggle="tab" href="#escrito" role="tab" aria-controls="profile" aria-selected="false">Escritos por resolver</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="tramite" role="tabpanel" aria-labelledby="tramite-tab">
+    <br><br>
+    <app-grilla-tramite [tramites]="tramites">
+
+    </app-grilla-tramite>
+  </div>
+  <div class="tab-pane fade" id="escrito" role="tabpanel" aria-labelledby="escrito-tab">
+    <br><br>
+    <app-grilla-escrito>
+
+    </app-grilla-escrito>
+  </div>
+</div>

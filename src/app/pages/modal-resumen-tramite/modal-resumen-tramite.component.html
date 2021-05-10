@@ -1,0 +1,28 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-md-4">
+      <label>Rol: {{causa.tipoCausa}}-{{causa.rolCausa}}-{{causa.eraCausa}}</label>
+    </div>
+    <div class="col-md-4">
+      <label>Parte: {{causa.glosaParte}}</label>
+    </div>
+    <div class="col-md-4">
+      <label>Fecha Ingreso: {{causa.fechaIngresoCausa | date: 'dd/MM/yyyy'}}</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <label>Tribunal: {{causa.tribunalVO.glosa}}</label>
+    </div>
+  </div>
+  <div class="row">
+    <h4 class="centrado titulo">Historia de causa</h4>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-historia-causa-tramite [tramites]="tramites">
+
+      </app-historia-causa-tramite>
+    </div>
+  </div>
+</div>

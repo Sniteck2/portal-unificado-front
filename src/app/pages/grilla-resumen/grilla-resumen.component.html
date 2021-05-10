@@ -1,0 +1,140 @@
+<h4><p class="centrado titulo">Resumen de tabla RTO_CAUSA</p></h4>
+<div class="col-md-12">
+  <table [dtOptions]="dtOptions[0]" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-sm"
+         datatable id="causa">
+    <thead class="fondo-grilla">
+    <tr>
+      <th>Fecha de inicio</th>
+      <th>Fecha de termino</th>
+      <th>Total registros base</th>
+      <th>Total registros base estimada</th>
+      <th>Total registros portal</th>
+      <th>Tiempo/seg.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container>
+      <tr *ngFor="let item of resumenCausa">
+        <td>{{item.fechaInicio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.fechaTermino | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.totalRegistroBase}}</td>
+        <td>{{item.totalRegistroBaseEstimada}}</td>
+        <td>{{item.totalRegistroPortal}}</td>
+        <td>{{item.tiempo}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+<h4><p class="centrado titulo">Resumen de tabla RTO_CUADERNO</p></h4>
+<div class="col-md-12">
+  <table [dtOptions]="dtOptions[1]" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-sm"
+         datatable id="cuaderno">
+    <thead class="fondo-grilla">
+    <tr>
+      <th>Fecha de inicio</th>
+      <th>Fecha de termino</th>
+      <th>Total registros base</th>
+      <th>Total registros base estimada</th>
+      <th>Total registros portal</th>
+      <th>Tiempo/seg.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container>
+      <tr *ngFor="let item of resumenCuaderno">
+        <td>{{item.fechaInicio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.fechaTermino | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.totalRegistroBase}}</td>
+        <td>{{item.totalRegistroBaseEstimada}}</td>
+        <td>{{item.totalRegistroPortal}}</td>
+        <td>{{item.tiempo}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+<h4><p class="centrado titulo">Resumen de tabla RTO_ESCRITO</p></h4>
+<div class="col-md-12">
+  <table [dtOptions]="dtOptions[2]" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-sm"
+         datatable id="escrito">
+    <thead class="fondo-grilla">
+    <tr>
+      <th>Fecha de inicio</th>
+      <th>Fecha de termino</th>
+      <th>Total registros base</th>
+      <th>Total registros base estimada</th>
+      <th>Total registros portal</th>
+      <th>Tiempo/seg.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container>
+      <tr *ngFor="let item of resumenEscrito">
+        <td>{{item.fechaInicio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.fechaTermino | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.totalRegistroBase}}</td>
+        <td>{{item.totalRegistroBaseEstimada}}</td>
+        <td>{{item.totalRegistroPortal}}</td>
+        <td>{{item.tiempo}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+<h4><p class="centrado titulo">Resumen de tabla RTO_PARTE</p></h4>
+<div class="col-md-12">
+  <table [dtOptions]="dtOptions[3]" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-sm"
+         datatable id="parte">
+    <thead class="fondo-grilla">
+    <tr>
+      <th>Fecha de inicio</th>
+      <th>Fecha de termino</th>
+      <th>Total registros base</th>
+      <th>Total registros base estimada</th>
+      <th>Total registros portal</th>
+      <th>Tiempo/seg.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container>
+      <tr *ngFor="let item of resumenParte">
+        <td>{{item.fechaInicio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.fechaTermino | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.totalRegistroBase}}</td>
+        <td>{{item.totalRegistroBaseEstimada}}</td>
+        <td>{{item.totalRegistroPortal}}</td>
+        <td>{{item.tiempo}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+<h4><p class="centrado titulo">Resumen de tabla RTO_TRAMITE</p></h4>
+<div class="col-md-12">
+  <table [dtOptions]="dtOptions[4]" [dtTrigger]="dtTrigger" class="table table-bordered table-hover table-sm"
+         datatable id="tramite">
+    <thead class="fondo-grilla">
+    <tr>
+      <th>Fecha de inicio</th>
+      <th>Fecha de termino</th>
+      <th>Total registros base</th>
+      <th>Total registros base estimada</th>
+      <th>Total registros portal</th>
+      <th>Tiempo/seg.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container>
+      <tr *ngFor="let item of resumenTramite">
+        <td>{{item.fechaInicio | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.fechaTermino | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.totalRegistroBase}}</td>
+        <td>{{item.totalRegistroBaseEstimada}}</td>
+        <td>{{item.totalRegistroPortal}}</td>
+        <td>{{item.tiempo}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
