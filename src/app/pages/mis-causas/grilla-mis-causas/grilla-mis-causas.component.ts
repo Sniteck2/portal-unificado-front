@@ -70,6 +70,10 @@ export class GrillaMisCausasComponent implements OnInit, OnDestroy, AfterViewIni
   }
 
   public llenarGrillaMisCausas(causa: Causa): void {
+    Swal.fire({
+      imageUrl: 'assets/img/gallery/loading.gif',
+      showConfirmButton: false
+    });
     this.causaService.buscarCausaParte(causa).subscribe(data => {
       if (data.length != 0) {
         this.causas = [];
@@ -88,6 +92,7 @@ export class GrillaMisCausasComponent implements OnInit, OnDestroy, AfterViewIni
           this.cant = this.causas.length;
           this.enviarCantidad();
         }
+        Swal.close();
         this.renderizarDatatable();
       } else {
         this.causas = [];

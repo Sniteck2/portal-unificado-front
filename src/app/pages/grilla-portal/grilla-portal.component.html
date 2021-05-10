@@ -7,6 +7,7 @@
       <th>Caratulado</th>
       <th>Fecha de Ingreso</th>
       <th>Institución</th>
+      <th>Trámites</th>
     </tr>
   </thead>
   <tbody>
@@ -17,8 +18,23 @@
       <td>{{item.tribunalVO.glosa}}</td>
       <td>{{item.glosaParte}}</td>
       <td>{{item.fechaIngresoCausa | date: 'dd/MM/yyyy'}}</td>
-      <td>Institución</td>
+      <td>--</td>
+      <td class="centrado"><input type="image" class="imagen" src="assets/img/gallery/lupa.png" (click)="open(tramite, item.id)"/></td>
     </tr>
   </ng-container>
   </tbody>
 </table>
+
+<ng-template let-modal #tramite>
+  <div class="modal-header">
+    <h4 class="modal-title">Detalle Trámite</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-modal-resumen-tramite [causa]="causa">
+
+    </app-modal-resumen-tramite>
+  </div>
+</ng-template>

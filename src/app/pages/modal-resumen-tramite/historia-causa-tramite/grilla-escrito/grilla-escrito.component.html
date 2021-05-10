@@ -12,12 +12,12 @@
     </thead>
     <tbody>
     <ng-container>
-      <tr>
+      <tr *ngFor="let item of escritos">
         <td class="centrado"><input class="imagen" type="image" src="assets/img/gallery/pdf.png"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{item.numeroFolio}}</td>
+        <td>{{item.fechaPresentacion | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item.tipoEscritoVO.glosa}}</td>
+        <td>{{item.referencia}}</td>
       </tr>
     </ng-container>
     </tbody>

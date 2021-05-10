@@ -6,6 +6,7 @@ export class Tramite {
   etapa: string;
   referencia: string;
   estadoFirma: string;
+  idCuaderno: number;
 
   public constructor(init?: Partial<Tramite>) {
     Object.assign(this, init as Tramite);

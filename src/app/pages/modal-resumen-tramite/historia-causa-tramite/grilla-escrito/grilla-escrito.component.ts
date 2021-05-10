@@ -1,6 +1,15 @@
-import {AfterViewInit, Component, OnDestroy, OnInit, QueryList, ViewChildren} from '@angular/core';
-import {DataTableDirective} from "angular-datatables";
-import {Subject} from "rxjs";
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  ViewChildren
+} from '@angular/core';
+import {DataTableDirective} from 'angular-datatables';
+import {Subject} from 'rxjs';
+import {Escrito} from '../../../../models/escrito';
 
 @Component({
   selector: 'app-grilla-escrito',
@@ -14,10 +23,14 @@ export class GrillaEscritoComponent implements OnInit, OnDestroy, AfterViewInit 
   public dtOptions: DataTables.Settings[] = [];
   public dtTrigger: Subject<any> = new Subject();
 
+  @Input() public escritos: Escrito[] = [];
+  public escritosCargados: Escrito[] = [];
+
   constructor() { }
 
   ngOnInit() {
     this.dtOptions[0] = this.constructorDtOptions();
+    this.cargarEscritos();
   }
 
   ngOnDestroy(): void {
@@ -37,12 +50,17 @@ export class GrillaEscritoComponent implements OnInit, OnDestroy, AfterViewInit 
     });
   }
 
+  private cargarEscritos() {
+    this.escritosCargados = this.escritos;
+    this.renderizarDatatable();
+  }
+
   private constructorDtOptions(): DataTables.Settings {
     return {
       pageLength: 10,
       paging: true,
-      ordering: false,
-      searching: false,
+      ordering: true,
+      searching: true,
       destroy: true,
       language: {
         processing: 'Procesando...',

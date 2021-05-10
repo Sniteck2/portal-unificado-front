@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {DataTableDirective} from "angular-datatables";
-import {Subject} from "rxjs";
-import {Tramite} from "../../../../models/tramite";
+import {DataTableDirective} from 'angular-datatables';
+import {Subject} from 'rxjs';
+import {Tramite} from '../../../../models/tramite';
 
 @Component({
   selector: 'app-grilla-tramite',
@@ -50,8 +50,8 @@ export class GrillaTramiteComponent implements OnInit, OnDestroy, AfterViewInit 
     return {
       pageLength: 10,
       paging: true,
-      ordering: false,
-      searching: false,
+      ordering: true,
+      searching: true,
       destroy: true,
       language: {
         processing: 'Procesando...',

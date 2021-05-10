@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Tramite} from '../../../models/tramite';
+import {Escrito} from '../../../models/escrito';
 
 @Component({
   selector: 'app-historia-causa-tramite',
@@ -9,6 +10,7 @@ import {Tramite} from '../../../models/tramite';
 export class HistoriaCausaTramiteComponent implements OnInit {
 
   @Input() public tramites: Tramite[] = [];
+  @Input() public escritos: Escrito[] = [];
 
   constructor() { }
 
