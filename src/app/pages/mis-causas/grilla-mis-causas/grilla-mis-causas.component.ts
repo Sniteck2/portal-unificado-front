@@ -29,13 +29,12 @@ export class GrillaMisCausasComponent implements OnInit, OnDestroy, AfterViewIni
   @Output() cantidad = new EventEmitter<number>();
   @Output() cantidadCivil = new EventEmitter<number>();
   @Output() cantidadLaboral = new EventEmitter<number>();
+  @Output() cantidadCobranza = new EventEmitter<number>();
   @Output() enviarCausas = new EventEmitter<Causa[]>();
   public causas: Causa[] = [];
   @Input() public causa: Causa = new Causa();
   @Input() public idCausa: number;
   private cant: number;
-  private cantCivil = 0;
-  private cantLaboral = 0;
 
   constructor(private causaService: CausaService,
               private modal: NgbModal) {

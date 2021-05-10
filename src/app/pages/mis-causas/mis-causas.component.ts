@@ -21,6 +21,7 @@ export class MisCausasComponent implements OnInit {
   public cantidades = 0;
   public cantiCivil = 0;
   public cantiLaboral = 0;
+  public cantiCobranza = 0;
   public cantCausas: Causa[] = [];
   private idUsuario: number;
   private validaFechaInicio: Date;
@@ -84,9 +85,13 @@ export class MisCausasComponent implements OnInit {
         if (comp.id == 3) {
           comp.cantidadComp = 0;
         }
+        if (comp.id == 4) {
+          comp.cantidadComp = 0;
+        }
       });
       this.cantiCivil = 0;
       this.cantiLaboral = 0;
+      this.cantiCobranza = 0;
       this.cantidades = 0;
     } else {
       this.cantCausas.forEach(causas => {
@@ -99,10 +104,15 @@ export class MisCausasComponent implements OnInit {
             this.cantiLaboral++;
             comp.cantidadComp = this.cantiLaboral;
           }
+          if (causas.competenciaVO.id == 4 && comp.id == 4) {
+            this.cantiCobranza++;
+            comp.cantidadComp = this.cantiCobranza;
+          }
         });
       });
       this.cantiCivil = 0;
       this.cantiLaboral = 0;
+      this.cantiCobranza = 0;
     }
 
   }
@@ -124,17 +134,6 @@ export class MisCausasComponent implements OnInit {
     } else {
       this.llenarGrilla();
     }
-
-    /*if(this.validaFechaFinal.getUTCDate() > hoy.getUTCDate()){
-      Swal.fire({
-        title: "Info",
-        text: "Fecha final indicada no puede ser mayor al día actual.",
-        icon: "warning",
-        confirmButtonText: 'Aceptar'
-      });
-    } else{
-
-    }*/
   }
 }
 

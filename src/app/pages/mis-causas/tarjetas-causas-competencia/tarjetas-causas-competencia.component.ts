@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Competencia} from "../../../models/competencia";
+import {Competencia} from '../../../models/competencia';
 
 @Component({
   selector: 'app-tarjetas-causas-competencia',
