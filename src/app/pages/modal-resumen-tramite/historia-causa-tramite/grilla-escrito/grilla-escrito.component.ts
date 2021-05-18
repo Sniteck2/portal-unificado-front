@@ -52,7 +52,6 @@ export class GrillaEscritoComponent implements OnInit, OnDestroy, AfterViewInit 
 
   private cargarEscritos() {
     this.escritosCargados = this.escritos;
-    this.renderizarDatatable();
   }
 
   private constructorDtOptions(): DataTables.Settings {

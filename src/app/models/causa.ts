@@ -1,5 +1,5 @@
-import {Tribunal} from "./tribunal";
-import {Competencia} from "./competencia";
+import {Tribunal} from './tribunal';
+import {Competencia} from './competencia';
 
 export class Causa {
 

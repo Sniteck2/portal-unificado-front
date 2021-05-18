@@ -1,64 +1,77 @@
-<div class="col-md-12">
-  <div class="row justify-content-center">
-    <div class="div-padre">
-      <div class="div-hijo">
-        <label><b>Seleccione Competencia:</b></label>
-      </div>
-      <div class="col-md-2">
-        <ng-select [(ngModel)]="competencia"
-                   (change)="cambioTribunales();"
-                   placeholder="Competencia">
-          <ng-option *ngFor="let item of competencias" [value]="item.id">{{item.glosa}}</ng-option>
-        </ng-select>
-      </div>
-      <div class="div-hijo">
-        <label><b>Seleccione Tribunal:</b></label>
-      </div>
-      <div class="col-md-4">
-        <ng-select [(ngModel)]="tribunal" placeholder="Tribunal">
-          <ng-option *ngFor="let item of tribunales" [value]="item.id">{{item.glosa}}</ng-option>
-        </ng-select>
-      </div>
+<div class="card">
+  <div class="card-bar">
+    <div class="card-title">
+      <b>Consultar Causas</b>
     </div>
-    <div class="div-padre">
-      <div class="div-hijo">
-        <label><b>Filtro por rol de la causa:</b></label>&nbsp;&nbsp;&nbsp;
-      </div>
-      <div class="div-hijo">
-        <ng-select [(ngModel)]="tipoCausa" placeholder="Tipo Causa">
-          <ng-option *ngFor="let item of tipoCausas" [value]="item.tipoCausa">{{item.tipoCausa}}</ng-option>
-        </ng-select>
-      </div>
-      <div class="div-hijo">
-        <input [(ngModel)]="rolCausa" type="number" class="rol-causa" placeholder="rol causa">
-      </div>
-      <div class=" div-hijo col-md-2">
-        <ng-select placeholder="Año" [(ngModel)]="anio">
-          <ng-option *ngFor="let item of anios" [value]="item.anioo">{{item.anioo}}</ng-option>
-        </ng-select>
-      </div>
-      <div class="div-hijo">
-        <button (click)="buscar()" type="button" class="btn btn--radius btn--red">Buscar</button>
-      </div>
-    </div>
-    <br><br>
-    <div class="col-md-12" style="margin-top: 50px">
-      <div class="card">
-        <div class="card-bar">
-          <div class="card-title">
-            <b>Causas</b>
+  </div>
+  <div class="card-content">
+    <div class="col-md-12">
+      <div class="col-md-12">
+        <div class="row justify-content-center">
+          <div class="div-padre">
+            <div class="div-hijo">
+              <label><b>Seleccione Competencia:</b></label>
+            </div>
+            <div class="col-md-2">
+              <ng-select [(ngModel)]="competencia"
+                         (change)="cambioTribunales();"
+                         placeholder="Competencia">
+                <ng-option *ngFor="let item of competencias" [value]="item.id">{{item.glosa}}</ng-option>
+              </ng-select>
+            </div>
+            <div class="div-hijo">
+              <label><b>Seleccione Tribunal:</b></label>
+            </div>
+            <div class="col-md-4">
+              <ng-select [(ngModel)]="tribunal" placeholder="Tribunal">
+                <ng-option *ngFor="let item of tribunales" [value]="item.id">{{item.glosa}}</ng-option>
+              </ng-select>
+            </div>
           </div>
-        </div>
-        <div class="card-content">
-          <br>
-          <app-grilla-portal>
+          <div class="div-padre">
+            <div class="div-hijo">
+              <label><b>Filtro por rol de la causa:</b></label>&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="div-hijo">
+              <ng-select [(ngModel)]="tipoCausa" placeholder="Tipo Causa">
+                <ng-option *ngFor="let item of tipoCausas" [value]="item.tipoCausa">{{item.tipoCausa}}</ng-option>
+              </ng-select>
+            </div>
+            <div class="div-hijo">
+              <input [(ngModel)]="rolCausa" type="number" class="rol-causa" placeholder="rol causa">
+            </div>
+            <div class=" div-hijo col-md-2">
+              <ng-select placeholder="Año" [(ngModel)]="anio">
+                <ng-option *ngFor="let item of anios" [value]="item.anioo">{{item.anioo}}</ng-option>
+              </ng-select>
+            </div>
+            <div class="div-hijo">
+              <button (click)="buscar()" type="button" class="btn btn--radius btn--red">Buscar</button>
+            </div>
+          </div>
+          <br><br>
+          <div class="col-md-12" style="margin-top: 50px">
+            <div class="card">
+              <div class="card-bar">
+                <div class="card-title">
+                  <b>Causas</b>
+                </div>
+              </div>
+              <div class="card-content">
+                <br>
+                <app-grilla-portal>
 
-          </app-grilla-portal>
-          <br>
+                </app-grilla-portal>
+                <br>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <br><br>
 </div>
+
 
 

@@ -10,7 +10,7 @@ import {DataTableDirective} from 'angular-datatables';
 import {Causa} from '../../models/causa';
 import Swal from 'sweetalert2';
 import {CausaService} from '../../services/causa.service';
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-grilla-portal',

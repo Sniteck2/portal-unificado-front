@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  url: 'http://localhost:8012/',
-  // url: 'https://portal-unificado2.herokuapp.com/',
+  // url: 'http://localhost:8012/',
+  url: 'https://portal-unificado2.herokuapp.com/',
   firebaseConfig: {
     apikey: '',
     authDomain: 'portal-unificado-11950.firebaseapp.com',

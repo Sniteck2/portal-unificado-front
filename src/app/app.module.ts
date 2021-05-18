@@ -1,65 +1,56 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { BreadcrumbsComponent } from './layout/admin/breadcrumbs/breadcrumbs.component';
+import { TitleComponent } from './layout/admin/title/title.component';
+import { AuthComponent } from './layout/auth/auth.component';
+import {SharedModule} from './shared/shared.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CrearUsuarioComponent} from './pages/crear-usuario/crear-usuario.component';
+import {LoginUsuarioComponent} from './pages/login-usuario/login-usuario.component';
+import {MenuPrincipalComponent} from './pages/menu-principal/menu-principal.component';
+import {ModificarUsuarioComponent} from './pages/menu-principal/modificar-usuario/modificar-usuario.component';
+import {LoginUsuarioRoutingModule} from './pages/login-usuario/login-usuario-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ToastrModule} from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { LoginUsuarioComponent } from './pages/login-usuario/login-usuario.component';
-import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {LoginUsuarioRoutingModule} from './pages/login-usuario/login-usuario-routing.module';
-import { Ng2Rut } from 'ng2-rut';
-import { MenuPrincipalComponent } from './pages/menu-principal/menu-principal.component';
-import { TarjetaCompetenciaComponent } from './pages/tarjeta-competencia/tarjeta-competencia.component';
-import { GrillaPortalComponent } from './pages/grilla-portal/grilla-portal.component';
-import { DataTablesModule } from 'angular-datatables';
+import {Ng2Rut} from 'ng2-rut';
 import {NgSelectModule} from '@ng-select/ng-select';
-import { MisCausasComponent } from './pages/mis-causas/mis-causas.component';
-import { GrillaMisCausasComponent } from './pages/mis-causas/grilla-mis-causas/grilla-mis-causas.component';
-import { TarjetasCausasCompetenciaComponent } from './pages/mis-causas/tarjetas-causas-competencia/tarjetas-causas-competencia.component';
-import { ModificarUsuarioComponent } from './pages/menu-principal/modificar-usuario/modificar-usuario.component';
-import { GrillaResumenComponent } from './pages/grilla-resumen/grilla-resumen.component';
-import { ModalResumenTramiteComponent } from './pages/modal-resumen-tramite/modal-resumen-tramite.component';
-import { HistoriaCausaTramiteComponent } from './pages/modal-resumen-tramite/historia-causa-tramite/historia-causa-tramite.component';
-import { GrillaTramiteComponent } from './pages/modal-resumen-tramite/historia-causa-tramite/grilla-tramite/grilla-tramite.component';
-import { GrillaEscritoComponent } from './pages/modal-resumen-tramite/historia-causa-tramite/grilla-escrito/grilla-escrito.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginUsuarioComponent,
+    AdminComponent,
+    BreadcrumbsComponent,
+    TitleComponent,
+    AuthComponent,
     CrearUsuarioComponent,
+    LoginUsuarioComponent,
     MenuPrincipalComponent,
-    TarjetaCompetenciaComponent,
-    GrillaPortalComponent,
-    MisCausasComponent,
-    GrillaMisCausasComponent,
-    TarjetasCausasCompetenciaComponent,
-    ModificarUsuarioComponent,
-    GrillaResumenComponent,
-    ModalResumenTramiteComponent,
-    HistoriaCausaTramiteComponent,
-    GrillaTramiteComponent,
-    GrillaEscritoComponent
+    ModificarUsuarioComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    SharedModule,
     LoginUsuarioRoutingModule,
     HttpClientModule,
     NgbModule,
-    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     Ng2Rut,
-    DataTablesModule,
     FormsModule,
     NgSelectModule
   ],
+  schemas: [NO_ERRORS_SCHEMA],
   providers: [],
+  exports: [
+    TitleComponent,
+    BreadcrumbsComponent
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

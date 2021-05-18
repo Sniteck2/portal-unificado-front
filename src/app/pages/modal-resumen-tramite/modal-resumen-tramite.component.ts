@@ -4,7 +4,7 @@ import {Tramite} from '../../models/tramite';
 import {TramiteService} from '../../services/tramite.service';
 import {EscritoService} from '../../services/escrito.service';
 import {Escrito} from '../../models/escrito';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-modal-resumen-tramite',

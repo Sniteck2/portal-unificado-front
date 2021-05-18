@@ -12,7 +12,7 @@ export class GrillaTramiteComponent implements OnInit, OnDestroy, AfterViewInit 
 
   @ViewChild(DataTableDirective, {read: false, static: false})
   dtElement: DataTableDirective;
-  public dtOptions: DataTables.Settings[] = [];
+  dtOptions: DataTables.Settings = {};
   public dtTrigger: Subject<any> = new Subject();
 
   @Input() public tramites: Tramite[] = [];
@@ -22,7 +22,31 @@ export class GrillaTramiteComponent implements OnInit, OnDestroy, AfterViewInit 
   }
 
   ngOnInit() {
-    this.dtOptions[0] = this.constructorDtOptions();
+    this.dtOptions = {
+      pageLength: 10,
+      paging: true,
+      language: {
+        processing: 'Procesando...',
+        search: 'Buscar:',
+        lengthMenu: 'Mostrar _MENU_ causas',
+        infoEmpty: 'Mostrando ningún causa',
+        infoFiltered: '(filtrado _MAX_ elementos total)',
+        info: 'Mostrando _START_ a _END_ de _TOTAL_ causas',
+        loadingRecords: 'Cargando registros...',
+        zeroRecords: 'No se encontraron registros',
+        emptyTable: 'No hay datos disponibles en la tabla',
+        paginate: {
+          first: 'Primero',
+          previous: 'Anterior',
+          next: 'Siguiente',
+          last: 'Último'
+        },
+        aria: {
+          sortAscending: ': Activar para ordenar la tabla en orden ascendente',
+          sortDescending: ': Activar para ordenar la tabla en orden descendente'
+        }
+      }
+    };
     this.cargarTramites();
   }
 
@@ -43,37 +67,5 @@ export class GrillaTramiteComponent implements OnInit, OnDestroy, AfterViewInit 
 
   private cargarTramites() {
     this.tramiteCargados = this.tramites;
-    this.renderizarDatatable();
-  }
-
-  private constructorDtOptions(): DataTables.Settings {
-    return {
-      pageLength: 10,
-      paging: true,
-      ordering: true,
-      searching: true,
-      destroy: true,
-      language: {
-        processing: 'Procesando...',
-        search: 'Buscar:',
-        lengthMenu: 'Mostrar _MENU_ registros',
-        infoEmpty: 'Mostrando ningún registro',
-        infoFiltered: '(filtrado _MAX_ elementos total)',
-        info: 'Mostrando _START_ a _END_ de _TOTAL_ registros',
-        loadingRecords: 'Cargando registros...',
-        zeroRecords: 'No se encontraron registros',
-        emptyTable: 'No hay datos disponibles en la tabla',
-        paginate: {
-          first: 'Primero',
-          previous: 'Anterior',
-          next: 'Siguiente',
-          last: 'Último'
-        },
-        aria: {
-          sortAscending: ': Activar para ordenar la tabla en orden ascendente',
-          sortDescending: ': Activar para ordenar la tabla en orden descendente'
-        }
-      }
-    };
   }
 }

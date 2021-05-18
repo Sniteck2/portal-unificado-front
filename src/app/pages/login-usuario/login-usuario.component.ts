@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {UsuarioService} from "../../services/usuario.service";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UsuarioService} from '../../services/usuario.service';
 import Swal from 'sweetalert2';
-import {Usuario} from "../../models/usuario";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Usuario} from '../../models/usuario';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-usuario',
@@ -28,7 +28,7 @@ export class LoginUsuarioComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       codUsuario: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
   }
 
   ngOnInit() {
@@ -50,40 +50,40 @@ export class LoginUsuarioComponent implements OnInit {
       } else {
         this.contador++;
         if (this.contador == this.nroIntentos) {
-          let usuario: Usuario = new Usuario();
+          const usuario: Usuario = new Usuario();
           usuario.codUsuario = this.loginForm.get('codUsuario').value;
           this.usuarioService.bloquearUsuario(usuario).subscribe(data => {
             if (data.codUsuario != 0 && data.flgActivo == 0) {
               this.onSubmit();
               Swal.fire({
-                title: "Error",
-                text: "Usuario bloqueado",
-                icon: "warning",
+                title: 'Error',
+                text: 'Usuario bloqueado',
+                icon: 'warning',
                 confirmButtonText: 'Aceptar'
               });
             }
           }, error => {
             Swal.fire({
-              title: "Error",
-              text: "Reintente mas tarde",
-              icon: "error",
+              title: 'Error',
+              text: 'Reintente mas tarde',
+              icon: 'error',
               confirmButtonText: 'Aceptar'
             });
           });
         } else {
           Swal.fire({
-            title: "Datos incorrectos",
-            text: "Usuario o password incorrectos",
-            icon: "warning",
+            title: 'Datos incorrectos',
+            text: 'Usuario o password incorrectos',
+            icon: 'warning',
             confirmButtonText: 'Aceptar'
           });
         }
       }
     }, error => {
       Swal.fire({
-        title: "Error",
-        text: "Reintente mas tarde",
-        icon: "error",
+        title: 'Error',
+        text: 'Reintente mas tarde',
+        icon: 'error',
         confirmButtonText: 'Aceptar'
       });
     });
@@ -99,27 +99,27 @@ export class LoginUsuarioComponent implements OnInit {
   public usuarioBloqueado(): void {
 
     if (this.loginForm.get('codUsuario').valid && this.loginForm.get('password').valid) {
-      this.usuarioService.buscarPorRut(parseInt(this.loginForm.get('codUsuario').value)).subscribe(data =>{
-        if(data.id == -1){
+      this.usuarioService.buscarPorRut(parseInt(this.loginForm.get('codUsuario').value)).subscribe(data => {
+        if (data.id == -1) {
           Swal.fire({
-            title: "Error",
-            text: "Usuario no existe en el sistema, ¿desea crearlo?",
-            icon: "error",
+            title: 'Error',
+            text: 'Usuario no existe en el sistema, ¿desea crearlo?',
+            icon: 'error',
             showCancelButton: true,
             cancelButtonColor: '#d33',
             confirmButtonText: 'Aceptar'
-          }).then((result) =>{
-            if(result.isConfirmed){
+          }).then((result) => {
+            if (result.isConfirmed) {
               this.router.navigate(['/crear-usuario'], {relativeTo: this.route.parent});
             }
           });
-        }else{
+        } else {
           this.usuarioService.buscarPorRut(parseInt(this.loginForm.get('codUsuario').value)).subscribe(data => {
             if (data.id != -1 && data.flgActivo == 0) {
               Swal.fire({
-                title: "Error",
-                text: "Usuario bloqueado",
-                icon: "error",
+                title: 'Error',
+                text: 'Usuario bloqueado',
+                icon: 'error',
                 confirmButtonText: 'Aceptar'
               });
             } else {
@@ -130,9 +130,9 @@ export class LoginUsuarioComponent implements OnInit {
       });
     } else {
       Swal.fire({
-        title: "Error",
-        text: "Debe completar todos los campos",
-        icon: "error",
+        title: 'Error',
+        text: 'Debe completar todos los campos',
+        icon: 'error',
         confirmButtonText: 'Aceptar'
       });
     }
