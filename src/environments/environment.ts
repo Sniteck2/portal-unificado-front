@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   // url: 'http://localhost:8012/',
   url: 'https://portal-unificado2.herokuapp.com/',
   firebaseConfig: {
