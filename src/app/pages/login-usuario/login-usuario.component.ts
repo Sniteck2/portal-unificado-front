@@ -57,7 +57,7 @@ export class LoginUsuarioComponent implements OnInit {
               this.onSubmit();
               Swal.fire({
                 title: 'Error',
-                text: 'Usuario bloqueado',
+                text: 'Usuario bloqueado.',
                 icon: 'warning',
                 confirmButtonText: 'Aceptar'
               });
@@ -65,7 +65,7 @@ export class LoginUsuarioComponent implements OnInit {
           }, error => {
             Swal.fire({
               title: 'Error',
-              text: 'Reintente mas tarde',
+              text: 'Reintente mas tarde.',
               icon: 'error',
               confirmButtonText: 'Aceptar'
             });
@@ -73,8 +73,8 @@ export class LoginUsuarioComponent implements OnInit {
         } else {
           Swal.fire({
             title: 'Datos incorrectos',
-            text: 'Usuario o password incorrectos',
-            icon: 'warning',
+            text: 'Usuario o password incorrectos.',
+            icon: 'error',
             confirmButtonText: 'Aceptar'
           });
         }
@@ -82,7 +82,7 @@ export class LoginUsuarioComponent implements OnInit {
     }, error => {
       Swal.fire({
         title: 'Error',
-        text: 'Reintente mas tarde',
+        text: 'Reintente mas tarde.',
         icon: 'error',
         confirmButtonText: 'Aceptar'
       });
