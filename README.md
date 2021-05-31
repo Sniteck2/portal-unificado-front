@@ -1,6 +1,6 @@
-# GuruAbleV1.7.0
+# Portal Unificado V1.0.0
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.8.0.
 
 ## Development server
 
@@ -26,4 +26,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Modificación chica
+## Cambio archivo environment
+
+Cuando se despliegue en el servidor solo el archivo `environment.ts`
+debe ser modificado dejando la url apuntando a la ruta del servicio
+y la variable `production` en true, en caso contrario solo dejar
+url que apunta a local y variable `production` en false
